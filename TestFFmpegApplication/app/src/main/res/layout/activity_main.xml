@@ -7,13 +7,50 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/sample_text"
+        android:id="@+id/tv_version_hint"
+        android:text="当前ffmpeg版本："
+        app:layout_constraintTop_toBottomOf="@id/tv_version"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:id="@+id/tv_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_version_hint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="12dp"/>
+    <TextView
+        android:id="@+id/tv_input_hint"
+        android:text="请选择需要解码的视频类型"
+        app:layout_constraintTop_toBottomOf="@id/tv_version"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_output_hint"
+        android:text="请选择需要输出的视频格式"
+        app:layout_constraintTop_toBottomOf="@id/tv_input_hint"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_transform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认转换"
+        app:layout_constraintTop_toBottomOf="@id/tv_version"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="500dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

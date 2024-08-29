@@ -86,12 +86,11 @@ target_link_libraries(
         #自定义的测试库
         testffmpeg
         #连接 FFmpeg 相关的库
-        libavcodec
-        libavfilter
-        libavformat
-        libavutil
-        libswresample
-        libswscale
-
+        libavcodec          #编解码
+        libavfilter         #滤镜特效处理
+        libavformat         #封装格式处理
+        libavutil           #工具库
+        libswresample       #音频采样数据格式转换
+        libswscale          #视频像素数据格式转换
         ${log-lib})
 
