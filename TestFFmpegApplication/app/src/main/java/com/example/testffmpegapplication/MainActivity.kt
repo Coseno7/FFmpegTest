@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         // Example of a call to a native method
         binding.tvVersion.text = getConfiguration()
         binding.btnTransform.setOnClickListener{
-            decodeAudio()
+            decodeVideo()
         }
     }
 
@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     //TODO：完善读流后续流程
     private fun decodeVideo() {
         val src = "/hik/app/911Mothers_2010W-480p.mp4"
+        val out = "/hik/app/out.yuv"
         println("src:$src")
 
         val file = File(File("/hik/app"), "911Mothers_2010W-480p.mp4")
@@ -56,13 +57,13 @@ class MainActivity : AppCompatActivity() {
             // 文件不存在，进行相应处理
         }
 
-        decodeVideo(src)
+        decodeVideo(src,out)
     }
 
 
 
     external fun decodeAudio(src: String, out: String)
-    external fun decodeVideo(src: String): String
+    external fun decodeVideo(src: String, out: String)
 
     /**
      * 在 ffmpegNdkCustom.so 库中声明的原生c++的native方法，起连接作用
